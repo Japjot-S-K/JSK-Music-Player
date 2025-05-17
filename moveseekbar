@@ -1,0 +1,176 @@
+console.log('Lets write JavaScript')
+
+let currentSong = null; // Keep track of the currently playing audio
+let isDragging = false; // To keep track if the user is dragging the seekbar
+
+function secondsToMinutes(seconds) {
+    // Round down the seconds to remove milliseconds
+    seconds = Math.floor(seconds);
+    
+    // Calculate minutes and remaining seconds
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+
+    // Pad minutes and seconds with leading zeros if needed
+    const paddedMinutes = String(minutes).padStart(2, '0');
+    const paddedSeconds = String(remainingSeconds).padStart(2, '0');
+
+    // Return the formatted time
+    return `${paddedMinutes}:${paddedSeconds}`;
+}
+
+async function getSongs() {
+    let response = await fetch("http://127.0.0.1:3000/songs/")
+    let text = await response.text()
+    let div = document.createElement("div")
+    div.innerHTML = text
+    let as = div.getElementsByTagName("a")
+    let songs = []
+    for (let element of as) {
+        if (element.href.endsWith(".mp3")) {
+            songs.push(element.href.split("/songs/")[1])
+        }
+    }
+    return songs
+}
+
+const playMusic = (track) => {
+    // Pause the currently playing audio if there is one
+    if (currentSong) {
+        currentSong.pause()
+        currentSong.currentTime = 0 // Reset the audio to the start
+    }
+
+    // Create a new audio object for the new track
+    currentSong = new Audio("/songs/" + encodeURIComponent(track))
+    currentSong.play()
+    play.src = "pause.svg"
+    
+    // Update the displayed track information
+    let songName = decodeURIComponent(track.replace(".mp3", "").split(" - ")[0])
+    document.querySelector(".songinfo").innerHTML = songName
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
+
+    // Update the seekbar as the audio plays
+    currentSong.addEventListener('timeupdate', updateSeekBar)
+
+    // Listen for time update event
+    currentSong.addEventListener("timeupdate", () => {
+        if (!isDragging) { // Only update if not dragging
+            document.querySelector(".songtime").innerHTML = 
+            `${secondsToMinutes(currentSong.currentTime)} / 
+            ${secondsToMinutes(currentSong.duration)}`;
+        }
+    });
+}
+
+const updateSeekBar = () => {
+    if (!isDragging) { // Only update if not dragging
+        const circle = document.querySelector('.circle')
+        const progress = (currentSong.currentTime / currentSong.duration) * 100
+        circle.style.left = progress + '%'
+    }
+}
+
+const seekBarMouseDown = (e) => {
+    isDragging = true
+    updateCirclePosition(e)
+}
+
+const seekBarMouseMove = (e) => {
+    if (isDragging) {
+        updateCirclePosition(e)
+    }
+}
+
+const seekBarMouseUp = (e) => {
+    if (isDragging) {
+        updateCirclePosition(e)
+        isDragging = false
+        currentSong.currentTime = getAudioTimeFromPosition(e)
+    }
+}
+
+const updateCirclePosition = (e) => {
+    const seekBar = document.querySelector('.seekbar')
+    const rect = seekBar.getBoundingClientRect()
+    const offsetX = e.clientX - rect.left
+    const width = rect.width
+    const percentage = (offsetX / width) * 100
+    const circle = document.querySelector('.circle')
+    circle.style.left = Math.max(0, Math.min(percentage, 100)) + '%'
+}
+
+const getAudioTimeFromPosition = (e) => {
+    const seekBar = document.querySelector('.seekbar')
+    const rect = seekBar.getBoundingClientRect()
+    const offsetX = e.clientX - rect.left
+    const width = rect.width
+    const percentage = offsetX / width
+    return percentage * currentSong.duration
+}
+
+async function main() {
+    // Get list of all songs
+    let songs = await getSongs()
+    console.log(songs)
+
+    // Show all the songs in the playlist
+    let songUL = document.querySelector(".songlist ul")
+    for (const song of songs) {
+        let songName = decodeURIComponent(song.replace(".mp3", "")).split(" - ")[0];
+        let artist = decodeURIComponent(song.replace(".mp3", "")).split(" - ")[1];
+
+        let li = document.createElement("li")
+        li.setAttribute("data-fullname", song)
+        li.innerHTML = `
+            <img class="invert" src="music.svg" alt="">
+            <div class="info">
+                <div>${songName}</div>
+                <div>${artist}</div>
+            </div>
+            <div class="playnow">
+                <span>Play Now</span>
+                <img class="invert" src="play.svg" alt="">
+            </div>`
+        songUL.appendChild(li)
+    }
+
+    // Attach an event listener to each song
+    document.querySelectorAll(".songlist li").forEach(e => {
+        e.addEventListener("click", function() {
+            let fullSongName = e.getAttribute("data-fullname")
+            if (fullSongName) {
+                playMusic(fullSongName.trim())
+            } else {
+                console.error("data-fullname attribute is missing")
+            }
+        })
+    })
+
+    // Attach an event listener to play next and previous
+    play.addEventListener("click", () => {
+        if (currentSong.paused) {
+            currentSong.play()
+            play.src = "pause.svg"
+        } else {
+            currentSong.pause()
+            play.src = "play.svg"
+        }
+    })
+
+    // Attach event listeners to the seekbar
+    const seekBar = document.querySelector('.seekbar')
+    seekBar.addEventListener('mousedown', seekBarMouseDown)
+    document.addEventListener('mousemove', seekBarMouseMove)
+    document.addEventListener('mouseup', seekBarMouseUp)
+}
+
+main()
+
+
+
+//Add an event listener to seekbar
+    document.querySelector(".seekbar").addEventListener("click", e=>{
+        document.querySelector(".circle").style.left = (e.offset/e.target.getBoundingClientRect().width) * 100 + "%";
+    })

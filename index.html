@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/J.ico">
+    <link rel="stylesheet" href="utility.css">
+    <title>Web Player: Music for everyone</title>
+
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="left">
+            <div class="close">
+                <img class="invert" src="assets/close.svg" alt="" srcset="">
+            </div>
+            <div class="pointerlogo home bg-grey rounded m-1 p-1">
+                <div class="logo"><img width="41" class="" src="J.png" alt=""></div>
+                <ul>
+                    <li><img class="invert" src="assets/home.svg" alt="Home">Home</li>
+                    <li><img class="invert" src="assets/search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="assets/playlist.svg" alt="">
+                    <h2>
+                        Your Library
+                    </h2>
+
+
+                </div>
+                <div class="songlist">
+                    <ul>
+                        <li>
+                            <img  src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Song Name</div>
+                                <div>Song Artist</div>
+                            </div>
+                            <div class="playnow">
+                                <span>Play Now</span>
+                                <img class="invert" src="assets/play.svg" alt="">
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+                
+                <div class="footer">
+                    <div>Contact at gmail : japjotsingh.kashyap@gmail.com</div>
+                    <!-- <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/safetyandprivacy/"><span>Safety & Privacy
+                                Center</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div> -->
+
+                </div>
+            </div>
+
+        </div>
+        <div class="right bg-grey rounded ">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgercontainer">
+
+
+
+                        <img width="40" class="invert hamburger" src="assets/hamburger.svg" alt="" srcset="">
+                        <img width="40" src="assets/music2.svg" alt="">
+                        <span>Use Headphones for a better Experience!</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <img class="darkmode" src="assets/dark.svg" alt="" id="moonicon">
+                    <button class="signupbtn">Sign Up</button>
+                    <button class="loginbtn">Log In</button>
+                </div>
+            </div>
+            <div class="spotifyPlaylists">
+                <h1>Your Playlists</h1>
+                <div class="cardContainer">
+
+                    <div data-folder="ncs" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://images.squarespace-cdn.com/content/v1/5d5d57d1c5261d0001977a67/9c746d49-9e7c-43e6-b18c-fa32ab398a4c/KSCo_SpotifyAlbumCover_SongsToMakeYouSmile_Shop_SqUnder250.jpg?format=750w" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Make your day Better!</p>
+                    </div>
+
+                    <div data-folder="cs" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAEdfw3xPPc/1/0/1600w/canva-pink-sunset-tumblr-aesthetic-love-songs-playlist-cover-IeYIUu1iRHQ.jpg" alt="">
+                        <h2>Feel-Good Tunes!</h2>
+                        <p>Music to Brighten Your Day!</p>
+                    </div>
+
+                    <div data-folder="sfx" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAF21teEyUM/1/0/1600w/canva-blue-beige-minimalist-modern-simple-typographic-solo-playlist-cover-MA3bEp-6K7A.jpg" alt="">
+                        <h2>Cheerful Beats!</h2>
+                        <p>Lift Your Spirits!</p>
+                    </div>
+
+                    <div data-folder="sgx" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAEdk-bF6C0/1/0/1600w/canva-blue-and-white-bold-and-dynamic-rap-hip-hop-playlist-cover-5-9Qz2eekss.jpg" alt="">
+                        <h2>Sunny Vibes!</h2>
+                        <p>Spread the Happiness!</p>
+                    </div>
+
+                    <div data-folder="sxx" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAFIcR1ENFQ/1/0/400w/canva-green-and-yellow-simple-clean-sunday-morning-playlist-cover-zfXcuvhYxhY.jpg" alt="">
+                        <h2>Uplifting Anthems!</h2>
+                        <p>Fuel Your Positivity!</p>
+                    </div>
+
+                    <div data-folder="stx" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAFLtKewqWQ/1/0/1600w/canva-black-minimalist-love-fire-playlist-cover-h38YOATCbhM.jpg" alt="">
+                        <h2>Joyful Jams!</h2>
+                        <p>Dance Away Your Worries!</p>
+                    </div>
+
+                    <div data-folder="sqj" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAF7hNTcpxo/3/0/800w/canva-minimalist-electronic-music-playlist-cover-Jjt_6SRzLTk.jpg" alt="">
+                        <h2>Smiles and Sounds!</h2>
+                        <p>Music to Make You Smile!</p>
+                    </div>
+
+                    <div data-folder="skj" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAF2xemKzUw/1/0/1600w/canva-colorful-popular-retro-music-playlist-cover-xTp7_6WA3Zs.jpg" alt="">
+                        <h2>Positive Energy!</h2>
+                        <p>Let the Good Times Roll!</p>
+                    </div>
+
+                    <div data-folder="jhg" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAFKAZAN7-E/1/0/1600w/canva-beige-black-minimal-typecentric-love%3A-romance-love-songs-playlist-cover-jjiRM7kqjQM.jpg" alt="">
+                        <h2>Good Vibes Only!</h2>
+                        <p>Your Daily Dose of Joy!</p>
+                    </div>
+
+                    <div data-folder="iuo" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAEdfgToPuA/1/0/1600w/canva-turquoise-and-pink-hands-90s-anime-love-songs-playlist-cover-2QedCFTcJRU.jpg" alt="">
+                        <h2>Radiant Rhythms!</h2>
+                        <p>Shine Bright with Music!</p>
+                    </div>
+
+                    <div data-folder="que" class="card">
+                        <div  class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                                <circle cx="12" cy="12" r="12" fill="#a2ca4c" />
+                                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" fill="none" />
+                                <path
+                                    d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+
+                        <img src="https://marketplace.canva.com/EAFy7bh8Bko/1/0/800w/canva-orange-and-green-illustrated-chill-vibes-playlist-cover-fZrqZt9afKI.jpg" alt="">
+                        <h2>Vibrant Vibes!</h2>
+                        <p>Color Your World with Sound!</p>
+                    </div>
+
+
+
+
+                    
+                    
+
+
+                   
+
+
+
+                    <!-- Space for more cards/Playlists -->
+
+
+
+
+
+                </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle">
+
+                        </div>
+                    </div>
+                    <div class="abovebar">
+
+
+                        <div class="songinfo">
+
+                        </div>
+                        <div class="songbuttons">
+                            <img width="35px" class="invert" id="previous" src="assets/previous.svg" alt="" srcset="">
+                            <img width="35px" class="invert" id="play" src="assets/play.svg" alt="" srcset="">
+                            <img width="35px" class="invert" id="next" src="assets/next.svg" alt="" srcset="">
+                        </div>
+
+                        <div class="timevol">
+                            <div class="songtime">
+
+                            </div>
+                            <div class="volume">
+                                <img width="25" class="invert" src="assets/volume.svg" alt="">
+                                <div class="range">
+                                    <input type="range" name="volume" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+.border {
+    border: 2px solid var(--border-color);
+    margin: 3px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.bg-black {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* .invert {
+    filter: invert(1);
+} */
+
+.bg-grey {
+    background-color: var(--secondary-color);
+}
+
+.rounded {
+    border-radius: 7px;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+/* Custom grey scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scroll-color-1); 
+    /* scroll color 1 */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color-2);
+    /* scroll color 2 */
+    border-radius: 6px;
+    border: 3px solid var(--scroll-color-1);
+    /* scroll color 1 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scroll-color-3);
+    /* scroll color 3 */
+
+}
+
+/* Firefox custom scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-color-2) var(--scroll-color-1);
+    /* scroll color 2,1 */
+}
+
+/* Custom scrollbar for Internet Explorer and Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
